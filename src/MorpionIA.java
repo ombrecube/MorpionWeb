@@ -168,6 +168,27 @@ public class MorpionIA {
 			}else if(Tab[7]=='O'&&Tab[8]=='O'&&Tab[4]=='X'){
 				MorpionTableau[6]='X';
 			return MorpionTableau;
+			//
+			}else if(
+					//Quand Tab[2] = 'X'
+					Tab[1]=='O'&&Tab[5]=='O'&&Tab[2]=='X' ||
+				    Tab[1]=='O'&&Tab[7]=='O'&&Tab[2]=='X' ||
+				    Tab[1]=='O'&&Tab[8]=='O'&&Tab[2]=='X' ||
+				    //Quand Tab[0] = 'X'
+				    Tab[1]=='O'&&Tab[3]=='O'&&Tab[0]=='X' ||
+				    Tab[1]=='O'&&Tab[7]=='O'&&Tab[0]=='X' ||
+				    Tab[1]=='O'&&Tab[6]=='O'&&Tab[0]=='X' ||
+				  //Quand Tab[6] = 'X'
+				    Tab[1]=='O'&&Tab[3]=='O'&&Tab[6]=='X' ||
+				    Tab[1]=='O'&&Tab[7]=='O'&&Tab[6]=='X' ||
+				    Tab[1]=='O'&&Tab[6]=='O'&&Tab[6]=='X' ||
+				  //Quand Tab[8] = 'X'
+				    Tab[1]=='O'&&Tab[3]=='O'&&Tab[8]=='X' ||
+				    Tab[1]=='O'&&Tab[7]=='O'&&Tab[8]=='X' ||
+				    Tab[1]=='O'&&Tab[6]=='O'&&Tab[8]=='X' ||
+					){
+				MorpionTableau[4]='X';
+			return MorpionTableau;
 			}
 			
 			
