@@ -30,6 +30,7 @@ public class MorpionClient {
 		Scanner scan = new Scanner(System.in);
 		String input;
 		boolean victoire = false;
+		MorpionIA IA = new MorpionIA();
 		
 		
 		while(true)
@@ -38,22 +39,27 @@ public class MorpionClient {
 			afficheGrille(grille);
 			
 			int c;
-			while(true) {
-				System.out.print("Entrez le numéro de la case (1 à 9) :");
-				input = scan.nextLine();			
-				
-				try {
-					c = Integer.parseInt(input);
-					if(c >= 1 && c <= 9 && grille[c-1] != joueur && grille[c-1] != ordi)
-						break;
-				}
-				catch(Exception e)
-				{
+			
+			if (joueurActif==ordi){
+				grille = IA.ChoixIA(grille);
+			}else{
+				while(true) {
+					System.out.print("Entrez le numéro de la case (1 à 9) :");
+					input = scan.nextLine();			
 					
-				};
+					try {
+						c = Integer.parseInt(input);
+						if(c >= 1 && c <= 9 && grille[c-1] != joueur && grille[c-1] != ordi)
+							break;
+					}
+					catch(Exception e)
+					{
+						
+					};
+				}
+				grille[c-1] = joueurActif;
 			}
 			
-			grille[c-1] = joueurActif;
 			
 			for(int i=0; i < 3; i++)
 			{
@@ -95,6 +101,7 @@ public class MorpionClient {
 				joueurActif = ordi;
 			else
 				joueurActif = joueur;
+			
 			
 		
 		}
