@@ -343,8 +343,78 @@ public class MorpionIA {
 			}
 			
 					
+		}else if (NumeroTour >= 2){
+			
+			//Verifie si l'un des deux peux gagner horizontalement
+			for (int i=0;i<9;i=i+3){
+				if(Tab[i]=="X"&&Tab[i+1]=="X"&&Tab[i+2]!="X"&&Tab[i+2]!="O" || Tab[i]=="O"&&Tab[i+1]=="O"&&Tab[i+2]!="O"&&Tab[i+2]!="X"){
+					MorpionTableau[i+2]="X";
+					return MorpionTableau;
+				}
+				if(Tab[i]=="X"&&Tab[i+2]=="X"&&Tab[i+1]!="X"&&Tab[i+1]!="O" || Tab[i]=="O"&&Tab[i+2]=="O"&&Tab[i+1]!="O"&&Tab[i+1]!="X"){
+					MorpionTableau[i+1]="X";
+					return MorpionTableau;
+				}
+				if(Tab[i+2]=="X"&&Tab[i+1]=="X"&&Tab[i]!="X"&&Tab[i]!="O" || Tab[i+2]=="O"&&Tab[i+1]=="O"&&Tab[i]!="X"&&Tab[i]!="O"){
+					MorpionTableau[i]="X";
+					return MorpionTableau;
+				}
+			}
+			//Verifie si l'un des deux peux gagner verticalement
+			for (int i=0;i<3;i=i+1){
+				if(Tab[i]=="X"&&Tab[i+3]=="X"&&Tab[i+6]!="X"&&Tab[i+6]!="O" || Tab[i]=="O"&&Tab[i+3]=="O"&&Tab[i+6]!="O"&&Tab[i+6]!="X"){
+					MorpionTableau[i+6]="X";
+					return MorpionTableau;
+				}
+				if(Tab[i+6]=="X"&&Tab[i+3]=="X"&&Tab[i]!="X"&&Tab[i]!="O" || Tab[i+6]=="O"&&Tab[i+3]=="O"&&Tab[i]!="O"&&Tab[i]!="X"){
+					MorpionTableau[i]="X";
+					return MorpionTableau;
+				}
+				if(Tab[i+6]=="X"&&Tab[i]=="X"&&Tab[i+3]!="X"&&Tab[i+3]!="O" || Tab[i+6]=="O"&&Tab[i]=="O"&&Tab[i+3]!="O"&&Tab[i+3]!="X"){
+					MorpionTableau[i+3]="X";
+					return MorpionTableau;
+				}
+				
+			}
+			//Verifie les diagonales
+			if(Tab[0]=="X"&&Tab[4]=="X"&&Tab[8]!="X"&&Tab[8]!="O" || Tab[0]=="O"&&Tab[4]=="O"&&Tab[8]!="O"&&Tab[8]!="X"){
+				MorpionTableau[8]="X";
+				return MorpionTableau;
+			}
+			if(Tab[0]=="X"&&Tab[8]=="X"&&Tab[4]!="X"&&Tab[4]!="O" || Tab[0]=="O"&&Tab[8]=="O"&&Tab[4]!="O"&&Tab[4]!="X"){
+				MorpionTableau[8]="X";
+				return MorpionTableau;
+			}
+			if(Tab[8]=="X"&&Tab[4]=="X"&&Tab[0]!="X"&&Tab[0]!="O" || Tab[8]=="O"&&Tab[4]=="O"&&Tab[0]!="O"&&Tab[0]!="X"){
+				MorpionTableau[8]="X";
+				return MorpionTableau;
+			}
+			
+			if(Tab[2]=="X"&&Tab[4]=="X"&&Tab[6]!="X"&&Tab[6]!="O" || Tab[2]=="O"&&Tab[4]=="O"&&Tab[6]!="O"&&Tab[6]!="X"){
+				MorpionTableau[8]="X";
+				return MorpionTableau;
+			}
+			if(Tab[2]=="X"&&Tab[6]=="X"&&Tab[4]!="X"&&Tab[4]!="O" || Tab[2]=="O"&&Tab[6]=="O"&&Tab[4]!="O"&&Tab[4]!="X"){
+				MorpionTableau[8]="X";
+				return MorpionTableau;
+			}
+			if(Tab[6]=="X"&&Tab[4]=="X"&&Tab[2]!="X"&&Tab[2]!="O" || Tab[6]=="O"&&Tab[4]=="O"&&Tab[2]!="O"&&Tab[2]!="X"){
+				MorpionTableau[8]="X";
+				return MorpionTableau;
+			}
+			
+			
 		}
-		System.out.print("Cas pas en pris en compte :/");
+		//Autrement choisie au hasard
+		int ok=0;
+		do{
+			int i = alea(0,9);
+			if(Tab[i]!="X"&&Tab[i]!="O"){
+				MorpionTableau[i] = "X";
+				return MorpionTableau;
+			}
+		}while(ok!=1);
+		System.out.print("Cas pas en pris en compte :/"+ NumeroTour);
 		return MorpionTableau;
 	}
 	
