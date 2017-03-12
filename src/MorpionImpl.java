@@ -9,19 +9,6 @@ implements Morpion {
 	
 	
 
-	@Override
-	public void jouer() throws java.rmi.RemoteException {
-		
-		
-	}
-
-
-
-	@Override
-	public String Choix(int Joueur, int numero) throws RemoteException {
-		String s = "74";
-		return s;
-	}
 
 
 
