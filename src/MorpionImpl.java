@@ -31,7 +31,7 @@ implements Morpion {
 
 	@Override
 	public boolean Choix() throws RemoteException {
-		//On demande a l'utilisateur de choisir une case vide
+		//On demande à l'utilisateur de choisir une case vide
 		afficheGrille(grilleGlobal);
 		while(true) {
 			System.out.print("Entrez le numéro de la case (1 à 9) :");
@@ -47,7 +47,7 @@ implements Morpion {
 				System.out.print("Exception choix " + e.getMessage());
 			};
 		}
-		//Incremente le nombre de case utilisé
+		//Incrémente le nombre de cases utilisées
 		nbCases++;
 		if(TestVictoire(grilleGlobal,joueur)){
 			victoire(grilleGlobal,joueur);

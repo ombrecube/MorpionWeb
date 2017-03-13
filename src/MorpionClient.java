@@ -7,6 +7,9 @@ import java.util.Scanner;
 public class MorpionClient {
 
 	public static void main(String[] args) {
+		
+		//A changer avec le fichier absolu de votre projet
+		//Changer MorpionServer aussi
 		System.setProperty("java.security.policy","file:/C:/Users/Corentin/Documents/MorpionWeb/src/java_policy.policy");
 		   
 		if (System.getSecurityManager() == null) {
@@ -25,7 +28,7 @@ public class MorpionClient {
 					play = morpion.Choix();
 				}while(play == false);
 				do{
-					System.out.print("Voulez vous rejouer ?:(1=oui/2=Non):\n");
+					System.out.print("Voulez vous rejouer ?:(1=Oui/2=Non):\n");
 					String input = scan.nextLine();
 					try {
 						choix = Integer.parseInt(input);
