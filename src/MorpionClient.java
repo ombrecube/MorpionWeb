@@ -7,13 +7,15 @@ import java.util.Scanner;
 public class MorpionClient {
 
 	public static void main(String[] args) {
-		
+		System.setProperty("java.security.policy","file:/C:/Users/Julien/Desktop/DUETI/Semestre 2/8INF345/RMI/MorpionWeb/src/java_policy.policy");
+		   
 		if (System.getSecurityManager() == null) {
 			   System.setSecurityManager(new SecurityManager());
 		}
 		try{
+			Registry rg = LocateRegistry.getRegistry(1099);
 			String url = "rmi://localhost/Morpion";
-			Morpion morpion =(Morpion) Naming.lookup(url);
+			Morpion morpion =(Morpion) rg.lookup(url);
 			int choix = 0;
 			Scanner scan = new Scanner(System.in);
 			do{
