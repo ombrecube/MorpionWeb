@@ -6,6 +6,7 @@ public class MorpionServer {
 
    public MorpionServer() {
 	   try {
+		   System.setProperty("java.security.policy","file:/C:/Users/Corentin/Documents/MorpionWeb/src/java_policy.policy");
 		   if (System.getSecurityManager() == null) {
 			   System.setSecurityManager(new SecurityManager());
 		   }
