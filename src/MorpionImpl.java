@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class MorpionImpl extends java.rmi.server.UnicastRemoteObject 
 implements Morpion {
-	
+	private static final long serialVersionUID = 2674880711467464646L;
 	//Initialise les variables globales
 	String[] grilleGlobal;
 	Scanner scan = new Scanner(System.in);

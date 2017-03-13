@@ -1,3 +1,4 @@
+import java.net.InetAddress;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -7,10 +8,12 @@ public class MorpionClient {
 
 	public static void main(String[] args) {
 		
-		System.setSecurityManager(new SecurityManager());
+		if (System.getSecurityManager() == null) {
+			   System.setSecurityManager(new SecurityManager());
+		}
 		try{
-			
-			Morpion morpion =(Morpion) Naming.lookup("//"+"localhost"+"/Morpion");
+			String url = "rmi://localhost/Morpion";
+			Morpion morpion =(Morpion) Naming.lookup(url);
 			int choix = 0;
 			Scanner scan = new Scanner(System.in);
 			do{
