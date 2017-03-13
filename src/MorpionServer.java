@@ -6,7 +6,14 @@ public class MorpionServer {
 
    public MorpionServer() {
 	   try {
+<<<<<<< HEAD
 		   System.setProperty("java.security.policy","file:/C:/Users/Corentin/Documents/MorpionWeb/src/java_policy.policy");
+=======
+		   //A changer avec le fichier absolu de votre projet
+			//Changer MorpionClient aussi
+			
+		   System.setProperty("java.security.policy","file:/C:/Users/Julien/Desktop/DUETI/Semestre 2/8INF345/RMI/MorpionWeb/src/java_policy.policy");
+>>>>>>> 2255caa4b624f1f019816f283feddd5d41175de2
 		   if (System.getSecurityManager() == null) {
 			   System.setSecurityManager(new SecurityManager());
 		   }
