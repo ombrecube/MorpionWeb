@@ -25,6 +25,7 @@ implements Morpion {
 				" ", " ", " ",
 				" ", " ", " "
 			};
+		nbCases = 0;
 		grilleGlobal = grille;
 	}
 
@@ -54,6 +55,7 @@ implements Morpion {
 		}else{
 			if(nbCases==9){
 				System.out.println("Partie terminée, aucun vainqueur !");
+				return true;
 			}
 			System.out.println("Au tour de l'ordinateur !");
 			grilleGlobal =IA.ChoixIA(grilleGlobal);
