@@ -13,7 +13,7 @@ public class MorpionClient {
 		}
 		try{
 			String url = "rmi://localhost/Morpion";
-			Morpion morpion =(Morpion) Naming.lookup(url);
+			Morpion morpion =(Morpion)Naming.lookup(url);
 			int choix = 0;
 			Scanner scan = new Scanner(System.in);
 			do{
